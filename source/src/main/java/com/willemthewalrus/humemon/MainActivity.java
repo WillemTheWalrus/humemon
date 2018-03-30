@@ -226,7 +226,7 @@ public class MainActivity extends AppCompatActivity {
     //code referenced from https://stackoverflow.com/questions/15228812/crop-image-in-android
     private void performCrop(Uri picUri){
         try {
-            Intent cropintent = new Intent();
+            Intent cropintent = new Intent("com.android.camera.action.CROP");
             cropintent.setDataAndType(picUri, "image/*");
             cropintent.putExtra("crop", true);
             cropintent.putExtra("aspectX", 1);
@@ -234,6 +234,7 @@ public class MainActivity extends AppCompatActivity {
             cropintent.putExtra("outputX", 128);
             cropintent.putExtra("outputY", 128);
             cropintent.putExtra("return-data", true);
+            cropintent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             startActivityForResult(cropintent, REQUEST_CROP);
         } catch(ActivityNotFoundException e){
             Log.i("crop", "cropnotfound");
@@ -245,7 +246,8 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == REQUEST_TAKE_PHOTO && resultCode == RESULT_OK){
             //grab the URI address from the file that has our picture
-            Uri uri = Uri.fromFile(new File(mCurrentPhotoPath));
+            File ourphoto = new File(mCurrentPhotoPath);
+            Uri uri = FileProvider.getUriForFile(this, "com.willemthewalrus.humemon.fileprovider", ourphoto );
 
             if(uri != null){
                 //send off a crop intent

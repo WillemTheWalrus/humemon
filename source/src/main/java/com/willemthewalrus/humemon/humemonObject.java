@@ -253,7 +253,7 @@ public class humemonObject {
     public void createTraitMap(){
         traitmap.put("girl",beanlady);
         traitmap.put("product",gymbro);
-        traitmap.put("face", reversemermaid);
+        traitmap.put("face", gymbro);
         traitmap.put("footwear",gymbro);
         traitmap.put("floor", beanlady);
         traitmap.put("flooring",beanlady);
@@ -266,7 +266,7 @@ public class humemonObject {
         traitmap.put("smile", reversemermaid);
         traitmap.put("eyebrow", gymbro);
         traitmap.put("human hair color", cowtaur);
-        traitmap.put("cheek", reversemermaid);
+        traitmap.put("cheek", cowtaur);
         traitmap.put("head", beanlady);
         traitmap.put("water", reversemermaid);
         traitmap.put("vegetation", cowtaur);
@@ -278,7 +278,7 @@ public class humemonObject {
         traitmap.put("product",gymbro);
         traitmap.put("nature", cowtaur);
         traitmap.put("chin",gymbro);
-        traitmap.put("eye",reversemermaid);
+        traitmap.put("eye",gymbro);
         traitmap.put("child", reversemermaid);
         traitmap.put("forehead",cowtaur);
         traitmap.put("selfie", beanlady);
@@ -289,11 +289,15 @@ public class humemonObject {
         traitmap.put("electronic device", gymbro);
         traitmap.put("nose", reversemermaid);
         traitmap.put("toddler",reversemermaid);
-        traitmap.put("mouth", reversemermaid);
+        traitmap.put("mouth", gymbro);
         traitmap.put("facial hair", gymbro);
         traitmap.put("hairstyle", gymbro);
         traitmap.put("lip", reversemermaid);
         traitmap.put("close up", cowtaur);
+        traitmap.put("textile", gymbro);
+        traitmap.put("organ", cowtaur);
+        traitmap.put("black hair", beanlady);
+
 
     }
 
